@@ -1,4 +1,4 @@
-# basicsetup
+# basic webpack setup
 
 1. run npm init
 2. run npm install webpack webpack-cli --save-dev to install webpack to the node_modules directory of your project
