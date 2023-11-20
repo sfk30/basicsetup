@@ -39,10 +39,12 @@ module: {
   },
 12. create a styles.css file
 13. add some styling e.g. color: red;
-14. add to webpack.config.js devtool: 'inline-source-map',
-15. in index.js add import './styles.css'; (should all work)
+14. in index.js add import './styles.css'; (should all work)
+15. 
 16. add the following to webpack.config.js for images
  {
     test: /\.(png|svg|jpg|jpeg|gif)$/i,
     type: 'asset/resource',
   },
+17. add to webpack.config.js devtool: 'inline-source-map',
+18. make sure to quit the build and re run for the source map to work
