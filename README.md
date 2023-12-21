@@ -47,3 +47,21 @@ module: {
   },
 16. add to webpack.config.js devtool: 'inline-source-map',
 17. make sure to quit the build and re run for the source map to work
+18. run npm install eslint --save-dev
+19. run ./node_modules/.bin/eslint --init
+20. type the following in command palette --> Preferences: Open Workspace Settings (JSON).
+21. copy into settings.json
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": ["javascript"]
+}
+22. copy the following into eslintrc.json
+"rules" : {
+    "no-console": "off",
+    "quotes": [
+        "error",
+        "double"
+    ]
+}
