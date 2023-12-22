@@ -47,21 +47,31 @@ module: {
   },
 16. add to webpack.config.js devtool: 'inline-source-map',
 17. make sure to quit the build and re run for the source map to work
-18. run npm install eslint --save-dev
-19. run ./node_modules/.bin/eslint --init
-20. type the following in command palette --> Preferences: Open Workspace Settings (JSON).
-21. copy into settings.json
+18. npm install --save-dev eslint prettier eslint-config-prettier
+19. npm init @eslint/config
+20. copy into settings.json
 {
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
     "eslint.validate": ["javascript"]
 }
-22. copy the following into eslintrc.json
+21. in .estlintrc.json add "extends": ["airbnb-base", "prettier"],
+(18. run npm install eslint --save-dev
+21. run ./node_modules/.bin/eslint --init
+22. type the following in command palette --> Preferences: Open Workspace Settings (JSON).
+23. copy into settings.json
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": ["javascript"]
+}
+24. copy the following into eslintrc.json
 "rules" : {
     "no-console": "off",
     "quotes": [
         "error",
         "double"
     ]
-}
+} )
