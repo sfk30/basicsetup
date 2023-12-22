@@ -1,6 +1,6 @@
 # basic webpack setup
 
-1. run npm init
+1. run npm init --y
 2. run npm install webpack webpack-cli --save-dev to install webpack to the node_modules directory of your project
 3. add a .gitignore file and include node_modules
 4. create src and add index.js and index.html
