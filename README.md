@@ -9,22 +9,26 @@
 7. run npm install --save-dev html-webpack-plugin.
 8. copy the following into webpack.config.js file
    
-const path = require('path');
+const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-   plugins: [
-     new HtmlWebpackPlugin({
-       template: './src/index.html',
-       filename: 'index.html',
-       inject: 'body'
-};
 
+module.exports = {
+    mode: 'production',
+    entry: './src/index.js', 
+    output: {
+        filename: 'main.js',
+        path: path.resolve(__dirname, 'dist'),
+        clean: true
+    },
+    plugins: [
+        new htmlWebpackPlugin({
+            template: './src/index.html',
+            filename: 'index.html',
+            inject: 'body'
+        })
+    ]
+}
 8. in package.json add "build": "webpack --watch"
 9. now type npm run build (should create index.html and main.js in dist folder)
 10. run npm install --save-dev style-loader css-loader
@@ -37,7 +41,7 @@ module: {
       },
     ],
   },
-12. create a styles.css file
+12. create a styles.css file in src folder
 13. add some styling e.g. color: red;
 14. in index.js add import './styles.css'; (should all work)
 15. add the following to webpack.config.js for images
@@ -58,13 +62,7 @@ module: {
 }
 21. copy in .estlintrc.json add "extends": ["airbnb-base", "prettier"],
 22. copy the following into eslintrc.json
-"rules" : {
-    "no-console": "off",
-    "quotes": [
-        "error",
-        "double"
-    ]
-} )
+"rules": { "no-console": "off", "quotes": ["error", "double"] }
 (18. run npm install eslint --save-dev
 21. run ./node_modules/.bin/eslint --init
 22. type the following in command palette --> Preferences: Open Workspace Settings (JSON).
